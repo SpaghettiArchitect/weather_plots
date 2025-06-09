@@ -34,12 +34,16 @@ def main() -> None:
     ax.fill_between(dates, highs, lows, facecolor="blue", alpha=0.1)
 
     # Format plot
-    title = "Daily High and Low Temperatures, 2021\nDeath Valley, CA"
+    title = "Daily High and Low Temperatures, 2021\nDeath Valley, CA, US"
     ax.set_title(title, fontsize=20)
     ax.set_xlabel("", fontsize=16)
     fig.autofmt_xdate()
     ax.set_ylabel("Temperature (F)", fontsize=16)
     ax.tick_params(labelsize=16)
+
+    # Set the range for the y-axis, so the plot is easier to compare to
+    # the Sitka one
+    ax.set(ylim=(0, 140))
 
     plt.show()
 
